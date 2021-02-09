@@ -1,0 +1,5 @@
+# Site Settings
+title: SICP Exercises
+
+# Build Settings
+theme: jekyll-theme-cayman
