@@ -6,7 +6,7 @@ layout: default
 
 The definition they give for `prime-sum-pairs` is:
 
-```commonlisp
+```
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -19,7 +19,7 @@ The definition they give for `prime-sum-pairs` is:
 
 For `unique-pairs`, I just used the part of their code starting with `flatmap` and going through to the end, minus some parentheses:
 
-```commonlisp
+```
 (define (unique-pairs n)
   (flatmap (lambda (i)
              (map (lambda (j) (list i j))
@@ -29,7 +29,7 @@ For `unique-pairs`, I just used the part of their code starting with `flatmap` a
 
 Then you can rewrite `prime-sum-pairs` with that substitution:
 
-```clojure
+```
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -41,7 +41,7 @@ Then you can rewrite `prime-sum-pairs` with that substitution:
 
 Other needed code, mostly from the text:
 
-```clojure
+```
 (define (accumulate op initial sequence)
   (if (null? sequence)
       initial
@@ -86,4 +86,3 @@ Other needed code, mostly from the text:
 (define (make-pair-sum pair)
   (list (car pair) (cadr pair) (+ (car pair) (cadr pair))))
 ```
-
