@@ -6,7 +6,7 @@ layout: default
 
 The definition they give for `prime-sum-pairs` is:
 
-```common lisp
+```commonlisp
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -19,7 +19,7 @@ The definition they give for `prime-sum-pairs` is:
 
 For `unique-pairs`, I just used the part of their code starting with `flatmap` and going through to the end, minus some parentheses:
 
-```common lisp
+```commonlisp
 (define (unique-pairs n)
   (flatmap (lambda (i)
              (map (lambda (j) (list i j))
