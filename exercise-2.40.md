@@ -9,7 +9,7 @@ layout: default
 
 The definition they give for `prime-sum-pairs` is:
 
-```scheme
+```newlisp
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -22,7 +22,7 @@ The definition they give for `prime-sum-pairs` is:
 
 For `unique-pairs`, I just used the part of their code starting with `flatmap` and going through to the end, minus some parentheses:
 
-```scheme
+```newlisp
 (define (unique-pairs n)
   (flatmap (lambda (i)
              (map (lambda (j) (list i j))
@@ -32,7 +32,7 @@ For `unique-pairs`, I just used the part of their code starting with `flatmap` a
 
 Then you can rewrite `prime-sum-pairs` with that substitution:
 
-```scheme
+```newlisp
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -44,7 +44,7 @@ Then you can rewrite `prime-sum-pairs` with that substitution:
 
 Other needed code, mostly from the text:
 
-```scheme
+```newlisp
 (define (accumulate op initial sequence)
   (if (null? sequence)
       initial
