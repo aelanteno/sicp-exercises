@@ -2,14 +2,11 @@
 layout: default
 ---
 
-
-<https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html#%_thm_2.40>
-
-> Exercise 2.40.  Define a procedure unique-pairs that, given an integer n, generates the sequence of pairs (i,j) with 1< j< i< n. Use unique-pairs to simplify the definition of prime-sum-pairs given above.
+> [Exercise 2.40](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html#%_thm_2.40).  Define a procedure unique-pairs that, given an integer n, generates the sequence of pairs (i,j) with 1< j< i< n. Use unique-pairs to simplify the definition of prime-sum-pairs given above.
 
 The definition they give for `prime-sum-pairs` is:
 
-```newlisp
+```lisp
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -22,7 +19,7 @@ The definition they give for `prime-sum-pairs` is:
 
 For `unique-pairs`, I just used the part of their code starting with `flatmap` and going through to the end, minus some parentheses:
 
-```newlisp
+```lisp
 (define (unique-pairs n)
   (flatmap (lambda (i)
              (map (lambda (j) (list i j))
@@ -32,7 +29,7 @@ For `unique-pairs`, I just used the part of their code starting with `flatmap` a
 
 Then you can rewrite `prime-sum-pairs` with that substitution:
 
-```newlisp
+```lisp
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -44,7 +41,7 @@ Then you can rewrite `prime-sum-pairs` with that substitution:
 
 Other needed code, mostly from the text:
 
-```newlisp
+```lisp
 (define (accumulate op initial sequence)
   (if (null? sequence)
       initial
