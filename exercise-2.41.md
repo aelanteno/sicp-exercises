@@ -1,3 +1,4 @@
+
 ---
 layout: default
 ---
@@ -21,7 +22,7 @@ The procedure for this exercise is `triple-sum`:
           (unique-triples n)))
 ```
 
-The first argument, `n`, is the number that the numbers in the triple have to be less than or equal to. The second argument, `s`, is the target sum. `unique-triples`, modeled after `unique-pairs` in the previous exercise, finds all ordered triples of distinct positive integers i, j, and k less than or equal to a given integer `n`. Then `sequence-sum?` is used to filter that list of ordered triples to keep only the ones that add up to the given integer `s`.
+The first argument, `n`, is the number that the numbers in the triple have to be less than or equal to. The second argument, `s`, is the target sum. `unique-triples` finds all ordered triples of distinct positive integers i, j, and k less than or equal to a given integer `n`. Then `sequence-sum?` is used to filter that list of ordered triples to keep only the ones that add up to the given integer `s`.
 
 Note that an analogue to `make-pair-sum` isn’t needed because that was used only to stick the sum onto the end of each ordered pair. For this exercise, we don’t need to stick anything onto the end of the ordered triple.
 
@@ -56,7 +57,7 @@ Example:
 ((5 4 1) (5 4 2) (5 4 3))
 ```
 
-Next, for a given i, take the sequence representing `j` going from 1 to `i`-1 and `flatmap` it onto the above, to give a list of triples for each `j` with 0 < `j` < `i`:
+Next, for a given `i`, take the sequence representing `j` going from 1 to `i`-1 and `flatmap` it onto the above, to give a list of triples for each `j` with 0 < `j` < `i`:
 
 ```
 (flatmap (lambda (j)
@@ -77,7 +78,7 @@ Example:
 ((5 2 1) (5 3 1) (5 3 2) (5 4 1) (5 4 2) (5 4 3))
 ```
 
-The last step is to take the sequence representing `i` going from 1 to `n` and `flatmap` it onto the previous `flatmap`, to give that list of triples for all the `i` from 1 to `n`. Then you have `unique-triples`:
+The last step is to take the sequence representing `i` going from 1 to `n` and `flatmap` it onto the previous `flatmap`, to give that list of triples for each `i` from 1 to `n`. Then you have `unique-triples`:
 
 ```
 (define (unique-triples n)
@@ -127,7 +128,7 @@ The last step is to take the sequence representing `i` going from 1 to `n` and `
 ((4 3 1) (5 2 1))
 ```
 
-Other procedures needed to get these to run:
+### Other procedures needed to get these to run:
 
 ```
 (define (enumerate-interval low high)
