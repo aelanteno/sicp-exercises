@@ -4,7 +4,7 @@ layout: default
 
 > [Exercise 2.41](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html#%_thm_2.41).  Write a procedure to find all ordered triples of distinct positive integers i, j, and k less than or equal to a given integer n that sum to a given integer s.
 
-I modeled my answer after [my answer to the previous exercise](https://aelanteno.github.io/sicp-exercises/exercise-2.40), which is
+I modeled my answer after the procedure `prime-sum-pairs` from [my answer to the previous exercise](https://aelanteno.github.io/sicp-exercises/exercise-2.40):
 
 ```
 (define (prime-sum-pairs n)
@@ -13,7 +13,7 @@ I modeled my answer after [my answer to the previous exercise](https://aelanteno
                (unique-pairs n))))
 ```
 
-For this exercise, I wrote `triple-sum`:
+The procedure for this exercise is `triple-sum`:
 
 ```
 (define (triple-sum n s)
@@ -21,11 +21,13 @@ For this exercise, I wrote `triple-sum`:
           (unique-triples n)))
 ```
 
-The first argument, `n`, is the number that the numbers in the triple have to be less than or equal to. The second argument, `s`, is the target sum. `unique-triples`, modeled after `unique-pairs`, finds all ordered triples of distinct positive integers i, j, and k less than or equal to a given integer n. Then `sequence-sum?` is used to filter that list of ordered triples to keep only the ones that add up to the given integer `s`.
+The first argument, `n`, is the number that the numbers in the triple have to be less than or equal to. The second argument, `s`, is the target sum. `unique-triples`, modeled after `unique-pairs` in the previous exercise, finds all ordered triples of distinct positive integers i, j, and k less than or equal to a given integer `n`. Then `sequence-sum?` is used to filter that list of ordered triples to keep only the ones that add up to the given integer `s`.
 
-Note that an analogue `make-pair-sum` isn’t needed because that was used only to stick the sum onto the end of each ordered pair. For this exercise, we don’t need to stick anything onto the end of the order triple.
+Note that an analogue to `make-pair-sum` isn’t needed because that was used only to stick the sum onto the end of each ordered pair. For this exercise, we don’t need to stick anything onto the end of the ordered triple.
 
-### `unique-triples`
+Also note that I used a `lambda` function to enclose `sequence-sum` in order to pass the target sum `s` to it.
+
+### Enumerating all the unique triples with `unique-triples`
 
 Here’s `unique-pairs`:
 
@@ -93,9 +95,9 @@ The last step is to take the sequence representing `i` going from 1 to `n` and `
 ((3 2 1) (4 2 1) (4 3 1) (4 3 2) (5 2 1) (5 3 1) (5 3 2) (5 4 1) (5 4 2) (5 4 3))
 ```
 
-### `sequence-sum?`
+### The filter procedure `sequence-sum?`
 
-`sequence-sum?` is used in this exercise for triples, but I wrote it to be more generally usable for a sequence of any length. The first argument `seq` is a sequence of numbers. The second argument `sum` is the target sum. If the numbers in the sequence add up to the target sum, the procedure returns #t; otherwise it returns #f.
+`sequence-sum?` is used in this exercise for triples, but I wrote it to be more generally usable for a sequence of any length. The first argument `seq` is a sequence of numbers. The second argument `sum` is the target sum. If the numbers in the sequence add up to the target sum, the procedure returns `#t`; otherwise it returns `#f`.
 
 ```
 (define (sequence-sum? seq sum)
@@ -152,9 +154,9 @@ Other procedures needed to get these to run:
 
 ### Not needed for this exercise: `unique-tuples`
 
-`unique-tuples` is a general case procedure of `unique-pairs` and `unique-triples`, for tuples of any given length. `n` is the maximum value of the elements of the tuples and `k` is the length of the tuples.
+I also wrote `unique-tuples`, a general case procedure of `unique-pairs` and `unique-triples`, for tuples of any given length. `n` is the maximum value of the elements of the tuples and `k` is the length of the tuples. I assumed that `n` and `k` are integers.
 
-The procedure does recursion on both `k` and `n` at the same time. I assumed that both `n` and `k` are integers.
+The procedure uses recursion on both the maximum value of an entry and the length of the tuple.
 
 ```
 (define (unique-tuples n k)
