@@ -6,7 +6,7 @@ layout: default
 
 I modeled my answer after the procedure `prime-sum-pairs` from [my answer to the previous exercise](https://aelanteno.github.io/sicp-exercises/exercise-2.40):
 
-```
+```scheme
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -15,7 +15,7 @@ I modeled my answer after the procedure `prime-sum-pairs` from [my answer to the
 
 The procedure for this exercise is `triple-sum`:
 
-```
+```scheme
 (define (triple-sum n s)
   (filter (lambda (seq) (sequence-sum? seq s))
           (unique-triples n)))
@@ -31,7 +31,7 @@ Also note that I used a `lambda` function to enclose `sequence-sum` in order to 
 
 Here’s `unique-pairs`:
 
-```
+```scheme
 (define (unique-pairs n)
   (flatmap (lambda (i)
              (map (lambda (j) (list i j))
@@ -47,7 +47,7 @@ This produces a list of triples `(i j k)` that start with a given `i` and a give
 
 Example:
 
-```
+```scheme
 (define i 5)
 (define j 4)
 (define test1 (map (lambda (k) (list i j k)) (enumerate-interval 1 (- j 1))))
@@ -58,7 +58,7 @@ Example:
 
 Next, for a given `i`, take the sequence representing `j` going from 1 to `i`-1 and `flatmap` it onto the above, to give a list of triples for each `j` with 0 < `j` < `i`:
 
-```
+```scheme
 (flatmap (lambda (j)
              (map (lambda (k) (list i j k)) (enumerate-interval 1 (- j 1))))
            (enumerate-interval 1 (- i 1)))
@@ -66,7 +66,7 @@ Next, for a given `i`, take the sequence representing `j` going from 1 to `i`-1 
 
 Example: 
 
-```
+```scheme
 (define i 5)
 (define test2
   (flatmap (lambda (j)
@@ -79,7 +79,7 @@ Example:
 
 The last step is to take the sequence representing `i` going from 1 to `n` and `flatmap` it onto the previous `flatmap`, to give that list of triples for each `i` from 1 to `n`. Then you have `unique-triples`:
 
-```
+```scheme
 (define (unique-triples n)
   (flatmap (lambda (i)
              (flatmap (lambda (j)
@@ -99,7 +99,7 @@ The last step is to take the sequence representing `i` going from 1 to `n` and `
 
 `sequence-sum?` is used in this exercise for triples, but I wrote it to be more generally usable for a sequence of any length. The first argument `seq` is a sequence of numbers. The second argument `sum` is the target sum. If the numbers in the sequence add up to the target sum, the procedure returns `#t`; otherwise it returns `#f`.
 
-```
+```scheme
 (define (sequence-sum? seq sum)
   (equal? sum (accumulate + 0 seq)))
 
@@ -114,7 +114,7 @@ The last step is to take the sequence representing `i` going from 1 to `n` and `
 
 ### Testing `triple-sum`
 
-```
+```scheme
 (define (triple-sum n s)
   (filter (lambda (seq) (sequence-sum? seq s))
           (unique-triples n)))
@@ -129,7 +129,7 @@ The last step is to take the sequence representing `i` going from 1 to `n` and `
 
 ### Other procedures needed to get these to run:
 
-```
+```scheme
 (define (enumerate-interval low high)
   (if (> low high)
       nil
@@ -158,7 +158,7 @@ I also wrote `unique-tuples`, a general case procedure of `unique-pairs` and `un
 
 The procedure uses recursion on both the maximum value of an entry and the length of the tuple.
 
-```
+```scheme
 (define (unique-tuples n k)
   (cond ((< k 1) (list nil))
         ((< n 1) nil)
