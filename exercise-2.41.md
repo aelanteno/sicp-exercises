@@ -51,7 +51,8 @@ Example:
 (define i 5)
 (define j 4)
 (define test1 (map (lambda (k) (list i j k)) (enumerate-interval 1 (- j 1))))
-
+```
+```
 > test1
 ((5 4 1) (5 4 2) (5 4 3))
 ```
@@ -72,7 +73,8 @@ Example:
   (flatmap (lambda (j)
              (map (lambda (k) (list i j k)) (enumerate-interval 1 (- j 1))))
            (enumerate-interval 1 (- i 1))))
-
+```
+```
 > test2
 ((5 2 1) (5 3 1) (5 3 2) (5 4 1) (5 4 2) (5 4 3))
 ```
@@ -86,7 +88,8 @@ The last step is to take the sequence representing `i` going from 1 to `n` and `
                         (map (lambda (k) (list i j k)) (enumerate-interval 1 (- j 1))))
                       (enumerate-interval 1 (- i 1))))
            (enumerate-interval 1 n)))
-
+```
+```
 > (unique-triples 3)
 ((3 2 1))
 > (unique-triples 4)
@@ -102,7 +105,8 @@ The last step is to take the sequence representing `i` going from 1 to `n` and `
 ```scheme
 (define (sequence-sum? seq sum)
   (equal? sum (accumulate + 0 seq)))
-
+```
+```
 > (sequence-sum? (list 1 2 3) 6)
 #t
 > (sequence-sum? (list 1 2 3) 5)
@@ -118,7 +122,8 @@ The last step is to take the sequence representing `i` going from 1 to `n` and `
 (define (triple-sum n s)
   (filter (lambda (seq) (sequence-sum? seq s))
           (unique-triples n)))
-
+```
+```
 > (triple-sum 4 6)
 ((3 2 1))
 > (triple-sum 5 7)
@@ -167,7 +172,8 @@ The procedure uses recursion on both the maximum value of an entry and the lengt
                          (map (lambda (l) (cons i l))
                               (unique-tuples (- i 1) (- k 1))))
                        (enumerate-interval 1 n)))))
-
+```
+```
 > (unique-tuples 3 2)
 ((2 1) (3 1) (3 2))
 > (unique-tuples 2 3)
