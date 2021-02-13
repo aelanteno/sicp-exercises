@@ -6,7 +6,7 @@ layout: default
 
 The definition they give for `prime-sum-pairs` is:
 
-```Scheme
+```scheme
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
@@ -29,7 +29,7 @@ For `unique-pairs`, I just used the part of their code starting with `flatmap` a
 
 Then you can rewrite `prime-sum-pairs` with that substitution:
 
-```Scheme
+```scheme
 (define (prime-sum-pairs n)
   (map make-pair-sum
        (filter prime-sum?
