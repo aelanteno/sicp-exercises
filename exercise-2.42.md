@@ -8,18 +8,20 @@ layout: default
 >
 > Figure 2.8:  A solution to the eight-queens puzzle.
 >
-> The “eight-queens puzzle” asks how to place eight queens on a chessboard so that no queen is in check from any other (i.e., no two queens are in the same row, column, or diagonal). One possible solution is shown in figure 2.8. One way to solve the puzzle is to work across the board, placing a queen in each column. Once we have placed *k* - 1 queens, we must place the *k*th queen in a position where it does not check any of the queens already on the board. We can formulate this approach recursively: Assume that we have already generated the sequence of all possible ways to place *k* - 1 queens in the first *k* - 1 columns of the board. For each of these ways, generate an extended set of positions by placing a queen in each row of the kth column. Now filter these, keeping only the positions for which the queen in the *k*th column is safe with respect to the other queens. This produces the sequence of all ways to place *k* queens in the first *k* columns. By continuing this process, we will produce not only one solution, but all solutions to the puzzle.
+> The “eight-queens puzzle” asks how to place eight queens on a chessboard so that no queen is in check from any other (i.e., no two queens are in the same row, column, or diagonal). One possible solution is shown in figure 2.8. One way to solve the puzzle is to work across the board, placing a queen in each column. Once we have placed *k* - 1 queens, we must place the *k*th queen in a position where it does not check any of the queens already on the board. We can formulate this approach recursively: Assume that we have already generated the sequence of all possible ways to place *k* - 1 queens in the first *k* - 1 columns of the board. For each of these ways, generate an extended set of positions by placing a queen in each row of the *k*th column. Now filter these, keeping only the positions for which the queen in the *k*th column is safe with respect to the other queens. This produces the sequence of all ways to place *k* queens in the first *k* columns. By continuing this process, we will produce not only one solution, but all solutions to the puzzle.
 We implement this solution as a procedure `queens`, which returns a sequence of all solutions to the problem of placing *n* queens on an *n* × *n* chessboard. `Queens` has an internal procedure `queen-cols` that returns the sequence of all ways to place queens in the first *k* columns of the board.
 >
->(define (queens board-size)   (define (queen-cols k)       (if (= k 0)         (list empty-board)         (filter          (lambda (positions) (safe? k positions))          (flatmap           (lambda (rest-of-queens)             (map (lambda (new-row)                    (adjoin-position new-row k rest-of-queens))                  (enumerate-interval 1 board-size)))           (queen-cols (- k 1))))))   (queen-cols board-size))
+```scheme
+> (define (queens board-size) >   (define (queen-cols k)   >     (if (= k 0) >         (list empty-board) >         (filter >          (lambda (positions) (safe? k positions)) >          (flatmap >           (lambda (rest-of-queens) >             (map (lambda (new-row) >                    (adjoin-position new-row k rest-of-queens)) >                  (enumerate-interval 1 board-size))) >           (queen-cols (- k 1)))))) >   (queen-cols board-size))
+```
 >
-> In this procedure `rest-of-queens` is a way to place *k* - 1 queens in the first *k* - 1 columns, and *new-row* is a proposed row in which to place the queen for the *k*th column. Complete the program by implementing the representation for sets of board positions, including the procedure `adjoin-position`, which adjoins a new row-column position to a set of positions, and `empty-board`, which represents an empty set of positions. You must also write the procedure `safe?`, which determines for a set of positions, whether the queen in the *k*th column is safe with respect to the others. (Note that we need only check whether the new queen is safe -- the other queens are already guaranteed safe with respect to each other.)
+> In this procedure `rest-of-queens` is a way to place *k* - 1 queens in the first *k* - 1 columns, and `new-row` is a proposed row in which to place the queen for the *k*th column. Complete the program by implementing the representation for sets of board positions, including the procedure `adjoin-position`, which adjoins a new row-column position to a set of positions, and `empty-board`, which represents an empty set of positions. You must also write the procedure `safe?`, which determines for a set of positions, whether the queen in the *k*th column is safe with respect to the others. (Note that we need only check whether the new queen is safe -- the other queens are already guaranteed safe with respect to each other.)
 
-## Choosing a data structure
+## Choosing a representation
 
-We have a choice here of what kind of data structure to use. I chose to represent each board position as a list. The first element in the list represents which row the queen is in in the first column of the board. The second element in the list represents which row the queen is in in the second column. Etc. The last element in the list represents which row the queen is in in the last column. The number of elements in the list is the same as the number of columns on the board, which is the `board-size` argument in the given procedure. 
+We have a choice here of what kind of representation to use. I chose to represent each board position as a list. The first element in the list represents which row the queen is in in the first column of the board. The second element in the list represents which row the queen is in in the second column. Etc. The last element in the list represents which row the queen is in in the last column. The number of elements in the list is the same as the number of columns on the board, which is the `board-size` argument in the `queens` procedure. 
 
-The procedure `queens` returns a list of all the legal board positions for a given `board-size`. So it’s a list of sub-lists, with each sublist being of length `board-size`. 
+The procedure `queens` returns a list of all the legal board positions for a given `board-size`. It’s a list of sub-lists, with each sublist being of length `board-size`. 
 
 Example: The position in Figure 2.8, which is a solution for `board-size` = 8, is `(3 7 2 8 5 1 4 6)`. That would be one of the lists in the full set of solutions for `board-size` = 8.
 
@@ -51,7 +53,7 @@ Example: If `board-size` is 4, then `new-row` could be 2.
 
 ### What does `adjoin-position` do?
 
-It’s our job to define `adjoin-position`. It’s a procedure that adjoins a new position (row number in my representation) to a set of positions (list of row numbers in my representation). Its arguments are a number `new-row` representing a possible row in which to place the queen in the current (`k`th) column, a number `k` representing the current column, and a list `rest-of-queens` representing one way to legally place queens in `k` - 1 columns.
+It’s our job to define `adjoin-position`. It’s a procedure that adjoins a new position (a row number in my representation) to a set of positions (list of row numbers in my representation). Its arguments are a number `new-row` representing a possible row in which to place the queen in the current (`k`th) column, a number `k` representing the current column, and a list `rest-of-queens` representing one way to safely place queens in `k` - 1 columns.
 
 Example: If the row is 2, the column is 3, and `rest-of-queens` is `(1 4)`, then `adjoin-position` returns `(1 4 2)`.
 
@@ -59,8 +61,10 @@ Using this description, we see that we want `adjoin-position` to stick `new-row`
 
 In the definition below of `adjoin-position`, I changed the names of the arguments from those used in `queens` so as not to use the same argument names in two different procedures.
 
+```scheme
 (define (adjoin-position row column position-so-far)
   (append position-so-far (list row)))
+```
 
 Note that `column` isn’t used in the definition. I kept it in there so I could use the `queens` procedure as written in the exercise.
 
@@ -73,7 +77,7 @@ Note that `column` isn’t used in the definition. I kept it in there so I could
 
 This maps the enumerated interval from 1 to `board-size` onto a list of length `board-size`. Each thing in the new list is a sub-list of length `k`. The sub-lists of length `k` all start with the same `k` - 1 entries that were in `rest-of-queens` and each has a different last entry, from 1 to `board-size`.
 
-Example: If `board-size` is 4 and `rest-of-queens` is `(1 3), then this `map` returns `((1 3 1) (1 3 2) (1 3 3) (1 3 4))`.
+Example: If `board-size` is 4 and `rest-of-queens` is `(1 3)`, then this `map` returns `((1 3 1) (1 3 2) (1 3 3) (1 3 4))`.
 
 Note that the positions returned by this `map` may or may not be legal board positions.
 
@@ -94,9 +98,9 @@ In other words, it combines the results of `map` for all the solutions already f
 
 ### What does `safe?` do?
 
-It’s our job to define `safe?`. It’s used in the filter to choose the legal solutions from the potential solutions produced by the `flatmap`.
+It’s our job to define `safe?`. It’s used in the filter to choose the safe solutions from the potential solutions produced by the `flatmap`.
 
-``safe?` takes two arguments: the number of columns and a list representing some queen positions. That list will be of length `k`. We know that the first `k` - 1 positions in the list are safe together, but we don’t know if the `k`th number in the list is safe with the others and that’s what we need `safe?` to find out.
+`safe?` takes two arguments: the number of columns and a list representing some queen positions. That list will be of length `k`. We know that the first `k` - 1 positions in the list are safe together, but we don’t know if the `k`th number in the list is safe with the others and that’s what we need `safe?` to find out.
 
 There are two things to check for:
 
@@ -106,14 +110,18 @@ There are two things to check for:
 
 I wrote a `last` procedure. It returns the last item in a list. That’s the one we want to check against the others. I used `let` so that the last item would only have to be pulled out once for each time `safe?` is used.
 
-I didn’t make use of the `column` argument to `safe?`. Instead, in the helper procedure, I used the length of the list representing the current partial set of positions. I could remove `column` as an argument to `safe?` and change the `(lambda (positions) (safe? k positions))` line to say just `safe?`. I didn’t, in order to fit my answer into the `queens` procedure given in the exercise.
-
 ```scheme
 (define (last items)
   (if (equal? (cdr items) nil)
       (car items)
       (last (cdr items))))
+```
 
+The helper procedure, `safe?-helper`, is recursive. It checks the last element (which represents the row that the last queen is in) against each other element in turn (representing each other queen’s position) to see if the two are safe with respect to each other. The three lines that return `#f` are when it finds an unsafe situation. If it gets to the end without finding an unsafe situation, it returns `#t`.
+
+I didn’t make use of the `column` argument to `safe?`. Instead, in the helper procedure, I used the length of the list representing the current partial set of positions. I could remove `column` as an argument to `safe?` and change the `(lambda (positions) (safe? k positions))` line to say just `safe?`. I didn’t, in order to fit my answer into the `queens` procedure given in the exercise.
+
+```scheme
 (define (safe? column position)
   (let ((last-queen-position (last position)))
     (define (safe?-helper partial-position) 
@@ -127,6 +135,7 @@ I didn’t make use of the `column` argument to `safe?`. Instead, in the helper 
 
 ## Other procedures that are needed to get `queens` to run, from the book
 
+```scheme
 (define (flatmap proc seq)
   (accumulate append nil (map proc seq)))
 
@@ -147,6 +156,7 @@ I didn’t make use of the `column` argument to `safe?`. Instead, in the helper 
       initial
       (op (car sequence)
           (accumulate op initial (cdr sequence)))))
+```
 
 ## Testing of the `queens` procedure with all the definitions filled in
 
