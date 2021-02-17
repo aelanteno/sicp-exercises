@@ -4,7 +4,7 @@ layout: default
 
 > [Exercise 2.42](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html#%_thm_2.42).  
 >
-> ![](https://i.imgur.com/sv9sz8p.png)
+> ![Figure 2.8](https://i.imgur.com/sv9sz8p.png)
 >
 > Figure 2.8:  A solution to the eight-queens puzzle.
 >
