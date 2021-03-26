@@ -8,27 +8,35 @@ layout: default
 10
 
 > `(+ 5 3 4)`  
+
 12
 
 > `(- 9 1)`  
+
 8
 
 > `(/ 6 2)`  
+
 3
 
 > `(+ (* 2 4) (- 4 6))`  
+
 6
 
 > `(define a 3)`  
+
 *no interpreter response to definitions*
 
 > `(define b (+ a 1))`  
+
 *no interpreter response*
 
 > `(+ a b (* a b))`  
+
 19
 
 > `(= a b)`  
+
 #f
 
 ```
@@ -46,6 +54,7 @@ layout: default
 16
 
 > `(+ 2 (if (> b a) b a))`  
+
 6
 
 ```
