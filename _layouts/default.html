@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html lang="{{ site.lang | default: "en-US" }}">  <!--lang is an attribute. the stuff in the curly braces is liquid.-->
+<html lang="{{ site.lang | default: "en-US" }}">  
   <head>
 
     {% if site.google_analytics %}
@@ -11,15 +11,15 @@
         gtag('config', '{{ site.google_analytics }}');
       </script>
     {% endif %}
-    <meta charset="UTF-8">   <!--this seems to be a thing people put on websites.-->
+    <meta charset="UTF-8">   
 
 {% seo %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">.  <!--this kind of link is not what you'd think-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">.  
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">  <!--I want to figure out this line-->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">  
   </head>
   
   <body> 
