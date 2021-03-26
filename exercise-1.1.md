@@ -46,9 +46,9 @@ layout: default
 
 4
 
-> `(cond ((= a 4) 6)`  
-> `      ((= b 4) (+ 6 7 a))`  
-> `      (else 25))`
+>     (cond ((= a 4) 6)` 
+>           ((= b 4) (+ 6 7 a))  
+>           (else 25))
 
 16
 
@@ -56,9 +56,9 @@ layout: default
 
 6
 
-> `(* (cond ((> a b) a)`  
-> `         ((< a b) b)`  
-> `         (else -1))`  
-> `   (+ a 1))`
+>     (* (cond ((> a b) a)  
+>              ((< a b) b)  
+>              (else -1))` 
+>        (+ a 1))
 
 16
