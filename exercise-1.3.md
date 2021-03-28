@@ -22,7 +22,7 @@ My procedure to find the sum of the squares of the two larger numbers in a tripl
         (else (sum-of-squares a b))))
 ```
 
-I tested my procedure to see if it worked. It did.
+I tested my procedure to see if it works. It does.
 
     > (sum-larger-squares 1 2 3)
     13
@@ -36,3 +36,12 @@ I tested my procedure to see if it worked. It did.
     13
     > (sum-larger-squares 2 3 1)
     13
+    > (sum-larger-squares 1 1 1)
+    2
+    > (sum-larger-squares 2 1 1)
+    5
+
+Note that you can enter negative numbers into the procedure:
+
+    > (sum-larger-squares -2 -3 1)
+    5
