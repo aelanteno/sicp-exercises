@@ -13,7 +13,7 @@ I used the definitions of `square` and `sum-of-squares` that are in the text:
   (+ (square x) (square y)))
 ```
 
-My procedure to find the sum of the squares of the two larger numbers in a triple uses `cond`, which was introduced in this section. The first line of the `cond` checks if *a*  is both <= *b* and <= *c*. If so, *b* and *c* will be the two larger numbers, so we call `sum-of-squares` with them. If that first line isn't true, then we know that *a* is one of the two larger numbers so we can just check if *b* <= *c*. If it is, then we can pick *a* and *c* for the two larger numbers to use in `sum-of-squares`. If not, then the last case is that *a* and *b* are the two larger numbers, and we use them in `sum-of-squares`. Note that if two or three of the input numbers are the same, it doesn't matter which we pick since the sum of the squares will be the same.
+My procedure to find the sum of the squares of the two larger numbers in a triple uses `cond`, which was introduced in this section. The first line of the `cond` checks if `a`  is both <= `b` and <= `c`. If so, `b` and `c` will be the two larger numbers, so we call `sum-of-squares` with them. If that first line isn't true, then we know that `a` is one of the two larger numbers so we can just check if `b` <= `c`. If it is, then we can pick `a` and `c` for the two larger numbers to use in `sum-of-squares`. If not, then the last case is that `a` and `b` are the two larger numbers, and we use them in `sum-of-squares`. Note that if two or three of the input numbers are the same, it doesn't matter which we pick since the sum of the squares will be the same.
 
 ``` scheme
 (define (sum-larger-squares a b c)

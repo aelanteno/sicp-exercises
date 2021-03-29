@@ -26,11 +26,11 @@ layout: default
 
 > `(define a 3)`
 
-The interpreter doesn't respond to definitions, but it remembers them. In everything below, it will evaluate *a* to 3.
+The interpreter doesn't respond to definitions, but it remembers them. In everything below, it will evaluate `a` to 3.
 
 > `(define b (+ a 1))`
 
-Again, the interpreter doesn't respond. But in everything below, it will evaluate *b* to 4.
+Again, the interpreter doesn't respond. But in everything below, it will evaluate `b` to 4.
 
 > `(+ a b (* a b))`
 
