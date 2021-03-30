@@ -124,23 +124,6 @@ a {
   }
 }
 
-.project-pretitle {
-  margin-top: 0;
-  margin-bottom: 0.3rem;
-
-  @include large {
-    font-size: 1.25rem;
-  }
-
-  @include medium {
-    font-size: 1.15rem;
-  }
-
-  @include small {
-    font-size: 1rem;
-  }
-}
-
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
@@ -155,6 +138,23 @@ a {
 
   @include small {
     font-size: 1.75rem;
+  }
+}
+
+.project-pretitle {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include large {
+    font-size: 2rem;
+  }
+
+  @include medium {
+    font-size: 1.50rem;
+  }
+
+  @include small {
+    font-size: 1rem;
   }
 }
 
@@ -373,15 +373,15 @@ a {
   border-top: solid 1px $hr-border-color;
 
   @include large {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   @include medium {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   @include small {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
 
