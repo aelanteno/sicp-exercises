@@ -1,6 +1,7 @@
 # Site Settings
 pretitle: aelanteno's answers to
 title: SICP Exercises
+description: dummy description
 
 # Build Settings
 theme: jekyll-theme-cayman
