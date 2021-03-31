@@ -9,7 +9,7 @@ In working the exercises, I used DrRacket with the language set to #sicp.
 
 ### [1.1 – The Elements of Programming](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-10.html#%_sec_1.1)
 
-[1.01](https://aelanteno.github.io/sicp-exercises/exercise-1.1) | [1.02](https://aelanteno.github.io/sicp-exercises/exercise-1.2) | [1.03](https://aelanteno.github.io/sicp-exercises/exercise-1.3) | 1.04 | 1.05 | 1.06 | 1.07 | 1.08
+[1.01](https://aelanteno.github.io/sicp-exercises/exercise-1.1) | [1.02](https://aelanteno.github.io/sicp-exercises/exercise-1.2) | [1.03](https://aelanteno.github.io/sicp-exercises/exercise-1.3) | [1.04](https://aelanteno.github.io/sicp-exercises/exercise-1.4) | [1.05](https://aelanteno.github.io/sicp-exercises/exercise-1.5) | 1.06 | 1.07 | 1.08
 
 ### [1.2 – Procedures and the Processes They Generate](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2)
 
