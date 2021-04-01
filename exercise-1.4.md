@@ -7,8 +7,6 @@ layout: default
 >     (define (a-plus-abs-b a b)  
 >       ((if (> b 0) + -) a b))  
 
-This procedure applies an operation to `a` and `b`. That operation is `(if (> b 0) + -)`. If `b` is greater than 0, this evaluates to `+`. If not, it evaluates to `-`.
+This procedure applies an operator to `a` and `b`. That operator is `(if (> b 0) + -)`. If `b` is greater than 0, the operator evaluates to `+`. If not, it evaluates to `-`.
 
 The overall effect is to return `a` plus the absolute value of `b`.
-
-Note: I don't know if it's correct to say "That operation is `(if (> b 0) + -)`". I'll change it if I find out otherwise.
