@@ -13,7 +13,7 @@ I used the definitions of `square` and `sum-of-squares` that are in the text:
   (+ (square x) (square y)))
 ```
 
-# My First Solution
+### My First Solution
 
 This procedure to find the sum of the squares of the two larger numbers in a triple uses `cond`, which was introduced in this section of the book. The first line of the `cond` checks if `a`  is both <= `b` and <= `c`. If so, `b` and `c` will be the two larger numbers, so we call `sum-of-squares` with them. If that first line isn't true, then we know that `a` is one of the two larger numbers so we can just check if `b` <= `c`. If it is, then we can pick `a` and `c` for the two larger numbers to use in `sum-of-squares`. If not, then the last case is that `a` and `b` are the two larger numbers, and we use them in `sum-of-squares`. Note that if two or three of the input numbers are the same, it doesn't matter which we pick since the sum of the squares will be the same.
 
@@ -24,7 +24,7 @@ This procedure to find the sum of the squares of the two larger numbers in a tri
         (else (sum-of-squares a b))))
 ```
 
-# A More Readable Version
+### A More Readable Version
 
 Someone pointed out to me that my first attempt isn't very readable. That's why I included a paragraph of explanation before it. It would be better to have the program clear enough that explanation isn't necessary.
 
