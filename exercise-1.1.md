@@ -18,75 +18,97 @@ layout: default
 
 12
 
+>
 ```scheme
 > (- 9 1)
 ```
+>
 
 8
 
+>
 ```scheme
 > (/ 6 2)
 ```
+>
 
 3
 
+>
 ```scheme
 > (+ (* 2 4) (- 4 6))
 ```
+>
 
 6
 
+>
 ```scheme
 > (define a 3)
 ```
+>
 
 The interpreter doesn't respond to definitions, but it remembers them. In everything below, it will evaluate `a` to 3.
 
+>
 ```scheme
 > (define b (+ a 1))
 ```
+>
 
 Again, the interpreter doesn't respond. But in everything below, it will evaluate `b` to 4.
 
+>
 ```scheme
 > (+ a b (* a b))
 ```
+>
 
 19
 
+>
 ```scheme
 > (= a b)
 ```
+>
 
 #f
 
+>
 ```scheme
 > (if (and (> b a) (< b (* a b)))  
 >     b  
 >     a)
 ```
+>
 
 4
 
+>
 ```scheme
 > (cond ((= a 4) 6)` 
 >       ((= b 4) (+ 6 7 a))  
 >       (else 25))
 ```
+>
 
 16
 
+>
 ```scheme
 > (+ 2 (if (> b a) b a))
 ```
+>
 
 6
 
+>
 ```scheme
 > (* (cond ((> a b) a)  
 >          ((< a b) b)  
 >          (else -1)) 
 >    (+ a 1))
 ```
+>
 
 16
