@@ -104,12 +104,14 @@ For very large numbers, `sqrt-iter-new` runs *fewer* times than `sqrt-iter` does
 
 The original version gets stuck on 50 9's in a row, but the new version doesn't. It doesn't even get stuck on 60 or 100 9's in a row. And the answers are very close to the exact square roots.
 
+```scheme
 > (sqrt-new 99999999999999999999999999999999999999999999999999)
 1.0000003807575104e+25
 > (sqrt-new 999999999999999999999999999999999999999999999999999999999999)
 1.0000000031080746e+30
 > (sqrt-new 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
 1.0000000000002003e+50
+```
 
 ## Smaller error
 
