@@ -3,13 +3,13 @@
 
 These exercises are from *Structure and Interpretation of Computer Programs*, by Harold Abelson and Gerald Jay Sussman, with Julie Sussman. The book can be found online [here](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html) and for sale in hard copy [here](https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871/).
 
-In working the exercises, I used DrRacket with the language set to #sicp.
+In working the exercises, I used DrRacket version 7.5, with the language set to #sicp.
 
 ## [Chapter 1: Building Abstractions with Procedures](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-9.html#%_chap_1)
 
 ### [1.1 – The Elements of Programming](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-10.html#%_sec_1.1)
 
-[1.1](https://aelanteno.github.io/sicp-exercises/exercise-1.1) | [1.2](https://aelanteno.github.io/sicp-exercises/exercise-1.2) | [1.3](https://aelanteno.github.io/sicp-exercises/exercise-1.3) | [1.4](https://aelanteno.github.io/sicp-exercises/exercise-1.4) | [1.5](https://aelanteno.github.io/sicp-exercises/exercise-1.5) | [1.6](https://aelanteno.github.io/sicp-exercises/exercise-1.6) | 1.7 | 1.8
+[1.1](https://aelanteno.github.io/sicp-exercises/exercise-1.1) | [1.2](https://aelanteno.github.io/sicp-exercises/exercise-1.2) | [1.3](https://aelanteno.github.io/sicp-exercises/exercise-1.3) | [1.4](https://aelanteno.github.io/sicp-exercises/exercise-1.4) | [1.5](https://aelanteno.github.io/sicp-exercises/exercise-1.5) | [1.6](https://aelanteno.github.io/sicp-exercises/exercise-1.6) | [1.7](https://aelanteno.github.io/sicp-exercises/exercise-1.7) | 1.8
 
 ### [1.2 – Procedures and the Processes They Generate](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2)
 
