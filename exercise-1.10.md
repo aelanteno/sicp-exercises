@@ -37,7 +37,7 @@ layout: default
 >
 > Give concise mathematical definitions for the functions computed by the procedures f, g, and h for positive integer values of n. For example, (k n) computes 5n2.
 
-### `(A 1 10)`
+### (A 1 10)
 
 ```scheme
 (A 1 10)
@@ -46,13 +46,14 @@ layout: default
 = (A 0 (A 0 (A 0 (A 1 7))))
 ... this will continue on until
 = (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 1))))))))))
-Since `(A 1 1)` is 2 (from the third line of the `cond`), this is (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 2))))))))).
 ```
-Then each of those instances of `(A 0 y)` evaluate to (* 2 y) and the result is 2<sup>10</sup>. 
+Since `(A 1 1)` is 2 (from the third line of the `cond`), this is `(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 2)))))))))`.
 
-We can see that `(A 1 n)` is 2<sup>n</sup>, for any positive integer `n` (see the procedure `g` below). We will use this in calculating `(A 2 4)` below.
+Then each of those instances of `(A 0 y)` evaluate to `(* 2 y)` and the result is 2<sup>10</sup>. 
 
-### `(A 2 4)`
+We can see that `(A 1 n)` is 2<sup>`n`</sup>, for any positive integer `n` (see the procedure `g` below). We will use this in calculating `(A 2 4)` below.
+
+### (A 2 4)
 
 ```scheme
 (A 2 4)
@@ -63,9 +64,9 @@ We can see that `(A 1 n)` is 2<sup>n</sup>, for any positive integer `n` (see th
 = (A 1 (A 1 4)) ; using the general result from the previous example
 = (A 1 16) ; again using the general result from the previous example
 ```
-= 2<sup>16</sup>. ; once more using the general result from the previous example
+which is 2<sup>16</sup>, once more using the general result from the previous example.
 
-### `(A 3 3)`
+### (A 3 3)
 
 ```scheme
 (A 3 3)
@@ -79,22 +80,18 @@ We can see that `(A 1 n)` is 2<sup>n</sup>, for any positive integer `n` (see th
 
 This is the same as the previous example, 2<sup>16</sup>.
 
-### `(define (f n) (A 0 n))`
+### (define (f n) (A 0 n))
 
-(f n)
-= (A 0 n)
-= (* 2 n) for any positive integer `n`.
+`(f n)` = `(A 0 n)` = `(* 2 n)` for any positive integer `n`.
 
-### `(define (g n) (A 1 n))`
+### (define (g n) (A 1 n))
 
-See the expansion of `(A 1 10)` above. `(g n)` is `(A 1 n)`, which is 2<sup>n</sup>, for any positive integer `n`.
+See the expansion of `(A 1 10)` above. `(g n)` is `(A 1 n)`, which is 2<sup>`n`</sup>, for any positive integer `n`.
 
-### `(define (h n) (A 2 n))`
+### (define (h n) (A 2 n))
 
-(h n)
-= (A 2 n)
-= (A 1 (A 2 (- n 1)))
+`(h n) = (A 2 n) = (A 1 (A 2 (- n 1)))`.
 This is the same as `(g (A 2 (- n 1)))`, or `(g (h (- n 1)))`.
 
-Another way to write this is 2<sup>(h (- n 1))</sup>.
+Another way to write this is 2<sup>`(h (- n 1))`</sup>.
 
