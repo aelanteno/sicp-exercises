@@ -95,3 +95,4 @@ This is the same as `(g (A 2 (- n 1)))`, or `(g (h (- n 1)))`.
 
 Another way to write this is 2<sup>`(h (- n 1))`</sup>.
 
+This is 2 to the power of 2 to the power of 2 to the power of... 2, with a total of `n` - 1 twos.
