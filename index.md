@@ -13,7 +13,7 @@ In working the exercises, I used DrRacket version 7.5, with the language set to 
 
 ### [1.2 – Procedures and the Processes They Generate](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2)
 
-[1.9](https://aelanteno.github.io/sicp-exercises/exercise-1.9) | [1.10](https://aelanteno.github.io/sicp-exercises/exercise-1.10) | [1.11](https://aelanteno.github.io/sicp-exercises/exercise-1.11) | 1.12 | 1.13 | 1.14 | 1.15 | 1.16 | 1.17 | 1.18
+[1.9](https://aelanteno.github.io/sicp-exercises/exercise-1.9) | [1.10](https://aelanteno.github.io/sicp-exercises/exercise-1.10) | [1.11](https://aelanteno.github.io/sicp-exercises/exercise-1.11) | [1.12](https://aelanteno.github.io/sicp-exercises/exercise-1.12) | 1.13 | 1.14 | 1.15 | 1.16 | 1.17 | 1.18
 1.19 | 1.20 | 1.21 | 1.22 | 1.23 | 1.24 | 1.25 | 1.26 | 1.27 | 1.28
 
 ### [1.3 – Formulating Abstractions with Higher-Order Procedures](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-12.html#%_sec_1.3)
