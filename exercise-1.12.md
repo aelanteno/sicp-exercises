@@ -2,7 +2,7 @@
 layout: default
 ---
 
-> [Exercise 1.12](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_thm_1.12). Exercise 1.12.  The following pattern of numbers is called Pascal's triangle.
+> [Exercise 1.12](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_thm_1.12). The following pattern of numbers is called Pascal's triangle.
 >
 > ![five rows of Pascal's triangle](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/ch1-Z-G-17.gif)
 >
