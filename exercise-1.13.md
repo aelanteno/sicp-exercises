@@ -36,7 +36,7 @@ When n = 1,
 
 = (&#632; - &#968;)/&#8730;5
 
-<img src="https://i.imgur.com/XaJkU3C.png" alt="big fraction of phi - psi written out in numbers, all divided by sqrt 5" height="50"/>
+<img src="https://i.imgur.com/XaJkU3C.png" alt="big fraction of phi - psi written out in numbers, all divided by sqrt 5" height="65"/>
 
 = ((2&#8730;5)/2)/&#8730;5
 
@@ -52,23 +52,24 @@ First, note that &#632; * &#968; = -1 and &#632; + &#968; = 1. We'll use these l
 
 Fib(n)
 
-*from the definition of the Fib numbers*
+*<small>from the definition of the Fib numbers</small>*
 
-= Fib(n-1) + Fib(n-2) *from the definition of the Fib numbers*
+= Fib(n-1) + Fib(n-2)
 
-*from the assumptions above*
+*<small>from the assumptions above</small>*
 
-<img src="https://i.imgur.com/mpGbw8T.png" alt="the assumptions written out" height="30"/>
-
-
+<img src="https://i.imgur.com/mpGbw8T.png" alt="the assumptions written out" height="65"/>
 
 
 
-
+[draft]
 
 
 
 
 
 
- Since all the Fib numbers are built up from previous Fib numbers and ultimately from Fib(0) and Fib(1), 
+
+
+
+ 
