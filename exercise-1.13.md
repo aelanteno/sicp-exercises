@@ -48,20 +48,23 @@ When n = 1,
 
 #### For n &#8805; 2.
 
-Now we'll assume that Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 and Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5 and show that for n &#8805;, Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 for any n &#8805; 0.
+Now, for any n &#8805; 2, we'll assume that Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 and Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5 and show that then Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
 First, note that &#632; * &#968; = -1 and &#632; + &#968; = 1. We'll use these later.
 
 Fib(n)
 
-*<small>from the definition of the Fib numbers</small>*
+*<small>from the definition of the Fib numbers:</small>*
 
 = Fib(n-1) + Fib(n-2)
 
-*<small>from the assumptions above</small>*
+*<small>from the assumptions above:</small>*
 
 <img src="https://i.imgur.com/6oaQWPC.png" alt="the assumptions written out" height="45"/>
 
+*<small>multiplying the top half of the first fraction by &#632; + &#968;, which = 1</small>*
+
+<img src="https://i.imgur.com/RoHeUeY.png" alt="after multiplying the top half of the first fraction by &#632; + &#968;" height="45"/>
 
 
 
