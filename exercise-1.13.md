@@ -38,9 +38,9 @@ When n = 1,
 
 = (&#632; - &#968;)/&#8730;5
 
-<img src="https://i.imgur.com/XaJkU3C.png" alt="big fraction of phi - psi written out in numbers, all divided by sqrt 5" height="65"/>
+<img src="https://i.imgur.com/6oaQWPC.png" alt="big fraction of phi - psi written out in numbers, all divided by sqrt 5" height="45"/>
 
-= ((2&#8730;5)/2)/&#8730;5
+<img src="https://i.imgur.com/neu13pp.png" alt="((2sqrt5)/2)/sqrt5" height="45"/>
 
 = 1
 
