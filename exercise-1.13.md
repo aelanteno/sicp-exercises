@@ -58,7 +58,7 @@ Fib(n)
 
 *<small>from the assumptions above</small>*
 
-<img src="https://i.imgur.com/6oaQWPC.png" alt="the assumptions written out" height="65"/>
+<img src="https://i.imgur.com/6oaQWPC.png" alt="the assumptions written out" height="35"/>
 
 
 
