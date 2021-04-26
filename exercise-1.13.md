@@ -76,7 +76,7 @@ Fib(n)
 
 #### For any positive integer &#8805; 0.
 
-You could start with Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true for n = 0 and n = 1, and that if it's true for n - 1 and n - 2, then it's true for n, and prove that it's true for n = 2. Then you could do the same to prove it's true for n = 3. And you could continue on doing that until you got to any particular positive number.
+You could start with knowing that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true for n = 0 and n = 1, and that, for any n &#8805; 2, if it's true for n - 1 and n - 2, then it's true for n. From this start, you could prove that it's true for n = 2. Then you could do the same to prove it's true for n = 3. And you could continue on doing that until you got to any particular positive number.
 
 ### 2. Use 1. to show that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5.
 
