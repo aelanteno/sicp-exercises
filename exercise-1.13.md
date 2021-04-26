@@ -5,16 +5,24 @@ layout: default
 > [Exercise 1.13](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_thm_1.13). Prove that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5, where &#632; = (1 + &#8730;5)/2. Hint: Let &#968; = (1 - &#8730;5)/2. Use induction and the definition of the Fibonacci numbers (see section [1.2.2](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.2)) to prove that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
 Outline of the proof, following the hint:
-1. Using induction, show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
-    - Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 0.
-    - Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 1.
-    - Show that for any n &#8805; 2, **if** Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 **and** Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5, **then** Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
-    - Conclude that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 for any n &#8805; 0.
-2. Use 1. to show that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5.
-    - Show that the absolute value of 1/&#8730;5 is less than 1/2.
-    - Show that the absolute value of &#968; is less than 1.
-    - Conclude that the absolute value of &#968;<sup>n</sup>/&#8730;5 is less than 1/2.
-    - Conclude that the closest integer to Fib(n) + &#968;<sup>n</sup>/&#8730;5, which is &#632;<sup>n</sup>/&#8730;5, as shown in 1., must be Fib(n).
+<ol>
+    <li>Using induction, show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
+        <ol type="a">
+        <li>Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 0.</li>
+        <li>how that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 1.</li>
+        <li>Show that for any n &#8805; 2, **if** Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 **and** Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5, **then** Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.</li>
+        <li>Conclude that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 for any n &#8805; 0.</li>
+        </ol>
+    </li>
+    <li>Use 1. to show that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5.
+        <ol type="a">
+        <li>Show that the absolute value of 1/&#8730;5 is less than 1/2.</li>
+        <li>Show that the absolute value of &#968; is less than 1.</li>
+        <li>Conclude that the absolute value of &#968;<sup>n</sup>/&#8730;5 is less than 1/2.</li>
+        <li>Conclude that the closest integer to Fib(n) + &#968;<sup>n</sup>/&#8730;5, which is &#632;<sup>n</sup>/&#8730;5, as shown in 1., must be Fib(n).</li>
+        </ol>
+    </li>
+</ol>
 
 ## 1. Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
@@ -100,8 +108,3 @@ For positive integers n, we get to &#968;<sup>n</sup>/&#8730;5 by multiplying 1/
 
 We know that Fib(n) is an integer, since Fib numbers are made by adding integers. And from 1., we know that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5, which is the same as &#632;<sup>n</sup>/&#8730;5 - &#968;<sup>n</sup>/&#8730;5. Since the second part of that has absolute value less than 1/2, Fib(n) must be the closest integer to the first part of it, which is &#632;<sup>n</sup>/&#8730;5.
 
-
-
-
-
- 
