@@ -10,7 +10,7 @@ Outline of the proof, following the hint:
         <ol type="a">
         <li>Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 0.</li>
         <li>how that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 1.</li>
-        <li>Show that for any n &#8805; 2, **if** Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 **and** Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5, **then** Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.</li>
+        <li>Show that for any n &#8805; 2, <strong>if</strong> Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 <strong>and</strong> Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5, <strong>then</strong> Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.</li>
         <li>Conclude that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 for any n &#8805; 0.</li>
         </ol>
     </li>
