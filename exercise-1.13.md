@@ -6,8 +6,8 @@ layout: default
 
 > [Exercise 1.13](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_thm_1.13). Prove that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5, where &#632; = (1 + &#8730;5)/2. Hint: Let &#968; = (1 - &#8730;5)/2. Use induction and the definition of the Fibonacci numbers (see section [1.2.2](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.2)) to prove that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
-Outline of the proof, following their hint:
-1. Prove that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
+Outline of the proof, following the hint:
+1. Using induction, prove that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
     - Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 0.
     - Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 1.
     - Show that for any n &#8805; 2, **if** Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 **and** Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5, **then** Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
@@ -62,11 +62,39 @@ Fib(n)
 
 <img src="https://i.imgur.com/6oaQWPC.png" alt="the assumptions written out" height="45"/>
 
-*<small>multiplying the top half of the first fraction by &#632; + &#968;, which = 1</small>*
+*<small>multiply the top half of the first fraction by &#632; + &#968;, which = 1</small>*
 
 <img src="https://i.imgur.com/RoHeUeY.png" alt="after multiplying the top half of the first fraction by &#632; + &#968;" height="45"/>
 
+*<small>since &#632; * &#968; = -1, replace one &#632;&#968; with -1 in each of the two middle terms of the top of the first fraction:</small>*
 
+<img src="https://i.imgur.com/9NHb1jE.png" alt="after replacing &#632;&#968; with -1 in terms 2 and 3" height="45"/>
+
+*<small>combine the two fractions and cancel some terms:</small>*
+
+<img src="https://i.imgur.com/i9jChXe.png" alt="(phi ^ n - psi n)/ sqrt 5" height="45"/>
+
+#### For any positive integer &#8805; 0.
+
+You could start with Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true for n = 0 and n = 1, and that if it's true for n - 1 and n - 2, then it's true for n, and prove that it's true for n = 2. Then you could do the same to prove it's true for n = 3. And you could continue on doing that until you got to any particular positive number.
+
+### 2. Use 1. to show that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5.
+
+We know that Fib(n) is an integer, since Fib numbers are made by adding integers. And from 1., we know that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5. So we want to know if (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5, which is the same as &#632;<sup>n</sup>/&#8730;5 - &#968;<sup>n</sup>/&#8730;5, is the closest integer to &#632;<sup>n</sup>/&#8730;5.
+
+That is true if the absolute value of &#968;<sup>n</sup>/&#8730;5 is less than 1/2.
+
+Looking at &#968;<sup>n</sup>/&#8730;5: 
+
+- When n = 0, &#968;<sup>n</sup>/&#8730;5 is 1/&#8730;5, which is around 0.4472 and has absolute value less than 1/2.
+
+- For positive integers n, you get to &#968;<sup>n</sup>/&#8730;5 by multiplying &#968;<sup>0</sup>/&#8730;5 by &#968;, n times.
+
+- &#968;, which is (1 - &#8730;5)/2, is around -0.6180, which has absolute value less than one. 
+
+- If we start with something with absolute value less than 1/2 and multiply it any number of times by something with absolute value less than 1, the result will still have absolute value less than 1/2.
+
+This means that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5.
 
 
 
