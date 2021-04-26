@@ -5,7 +5,7 @@ layout: default
 > [Exercise 1.13](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_thm_1.13). Prove that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5, where &#632; = (1 + &#8730;5)/2. Hint: Let &#968; = (1 - &#8730;5)/2. Use induction and the definition of the Fibonacci numbers (see section [1.2.2](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.2)) to prove that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
 Outline of the proof, following the hint:
-1. Using induction, prove that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
+1. Using induction, show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
     - Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 0.
     - Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 1.
     - Show that for any n &#8805; 2, **if** Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 **and** Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5, **then** Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
@@ -16,7 +16,7 @@ Outline of the proof, following the hint:
     - Conclude that the absolute value of &#968;<sup>n</sup>/&#8730;5 is less than 1/2.
     - Conclude that the closest integer to Fib(n) + &#968;<sup>n</sup>/&#8730;5, which is &#632;<sup>n</sup>/&#8730;5, as shown in 1., must be Fib(n).
 
-## 1. Prove that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
+## 1. Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
 ### Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 0.
 
@@ -78,9 +78,9 @@ Fib(n)
 
 So Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
-### For any positive integer.
+### Conclude that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 for any n &#8805; 0.
 
-If the positive integer is 0 or 1, we've already seen that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true. If the positive integer is 2, we can use the fact that for any n &#8805; 2, if Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true for n - 1 and n - 2, then it's true for n, because it's true for 0 and 1. Once we know it's true for n = 2, can do the same to prove it's true for n = 3. We can continue doing that until we got to any particular positive number.
+If the positive integer is 0 or 1, we've already seen that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true. If the positive integer is 2, we can use the fact that for any n &#8805; 2, if Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true for n - 1 and n - 2, then it's true for n, because it's true for 0 and 1. Once we know it's true for n = 2, can do the same to show that it's true for n = 3. We can continue doing that until we got to any particular positive number.
 
 ## 2. Use 1. to show that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5.
 
