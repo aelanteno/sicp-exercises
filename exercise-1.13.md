@@ -26,7 +26,7 @@ Outline of the proof, following the hint:
 
 ## 1. Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
-### Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 0.
+### a. Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 0.
 
 When n = 0,
 
@@ -40,7 +40,7 @@ When n = 0,
 
 = Fib(0).
 
-### Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 1.
+### b. Show that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 when n = 1.
 
 When n = 1,
 
@@ -56,7 +56,7 @@ When n = 1,
 
 = Fib(1).
 
-### Show that for any n &#8805; 2, **if** Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 **and** Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5, **then** Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
+### c. Show that for any n &#8805; 2, **if** Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5 **and** Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5, **then** Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
 Assume that n &#8805; 2, Fib(n-1) = (&#632;<sup>n-1</sup> - &#968;<sup>n-1</sup>)/&#8730;5, and Fib(n-2) = (&#632;<sup>n-2</sup> - &#968;<sup>n-2</sup>)/&#8730;5.  
 
@@ -86,25 +86,25 @@ Fib(n)
 
 So Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5.
 
-### Conclude that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 for any n &#8805; 0.
+### d. Conclude that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 for any n &#8805; 0.
 
 If the positive integer is 0 or 1, we've already seen that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true. If the positive integer is 2, we can use the fact that for any n &#8805; 2, if Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5 is true for n - 1 and n - 2, then it's true for n, because it's true for 0 and 1. Once we know it's true for n = 2, can do the same to show that it's true for n = 3. We can continue doing that until we got to any particular positive number.
 
 ## 2. Use 1. to show that Fib(n) is the closest integer to &#632;<sup>n</sup>/&#8730;5.
 
-### Show that the absolute value of 1/&#8730;5 is less than 1/2.
+### a. Show that the absolute value of 1/&#8730;5 is less than 1/2.
 
 1/&#8730;5 is around 0.4472, which has absolute value less than 1/2.
 
-### Show that the absolute value of &#968; is less than 1.
+### b. Show that the absolute value of &#968; is less than 1.
 
 &#968;, which is (1 - &#8730;5)/2, is around -0.6180, which has absolute value less than one.
 
-### Conclude that the absolute value of &#968;<sup>n</sup>/&#8730;5 is less than 1/2.
+### c. Conclude that the absolute value of &#968;<sup>n</sup>/&#8730;5 is less than 1/2.
 
 For positive integers n, we get to &#968;<sup>n</sup>/&#8730;5 by multiplying 1/&#8730;5 by &#968;, n times. If we start with something with absolute value less than 1/2 and multiply it n times by something with absolute value less than 1, the result will still have absolute value less than 1/2.
 
-### Conclude that the closest integer to Fib(n) + &#968;<sup>n</sup>/&#8730;5, which is &#632;<sup>n</sup>/&#8730;5, as shown in 1., must be Fib(n).
+### d. Conclude that the closest integer to Fib(n) + &#968;<sup>n</sup>/&#8730;5, which is &#632;<sup>n</sup>/&#8730;5, as shown in 1., must be Fib(n).
 
 We know that Fib(n) is an integer, since Fib numbers are made by adding integers. And from 1., we know that Fib(n) = (&#632;<sup>n</sup> - &#968;<sup>n</sup>)/&#8730;5, which is the same as &#632;<sup>n</sup>/&#8730;5 - &#968;<sup>n</sup>/&#8730;5. Since the second part of that has absolute value less than 1/2, Fib(n) must be the closest integer to the first part of it, which is &#632;<sup>n</sup>/&#8730;5.
 
