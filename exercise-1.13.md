@@ -76,7 +76,7 @@ Fib(n)
 
 <img src="https://i.imgur.com/RoHeUeY.png" alt="after multiplying the top half of the first fraction by &#632; + &#968;" height="45"/>
 
-*<small>replace one &#632; * &#968; with -1 in each of the two middle terms of the top half of the first fraction (since &#632; * &#968;) = -1:</small>*
+*<small>replace one &#632; * &#968; with -1 in each of the two middle terms of the top half of the first fraction, since &#632; * &#968; = -1:</small>*
 
 <img src="https://i.imgur.com/9NHb1jE.png" alt="after replacing &#632;&#968; with -1 in terms 2 and 3" height="45"/>
 
